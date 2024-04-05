@@ -21,7 +21,10 @@ function App() {
           <Route path="/" element={<Characters />}></Route>
           <Route path="/comics" element={<Comics />}></Route>
           <Route path="/comicId/:comicId" element={<ComicId />}></Route>
-          <Route path="/characterId" element={<CharacterId />}></Route>
+          <Route
+            path="/character/:characterId"
+            element={<CharacterId />}
+          ></Route>
           <Route
             path="/comicsSpecificCharacter/:characterId"
             element={<ComicsSpecificCharacter />}

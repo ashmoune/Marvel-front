@@ -34,7 +34,7 @@ const ComicsSpecificCharacter = () => {
     <p>Loading... please wait</p>
   ) : (
     <main>
-      <Link to="/characterId" className="character-info">
+      <Link to={`/character/${characterId}`} className="character-info">
         {characterName}
         {<img src={`${imageCharacter}`} alt="" />}
       </Link>
