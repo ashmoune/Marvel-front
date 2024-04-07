@@ -12,7 +12,7 @@ const CharacterId = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3000/character/${characterId}`
+          `https://site--backend-marvel--rh6mx4gc4kyd.code.run/character/${characterId}`
         );
         setcharacter(response.data);
         console.log(response.data);
@@ -32,12 +32,12 @@ const CharacterId = () => {
   return isLoading ? (
     <p>Loading..please wait</p>
   ) : (
-    <main className="container">
-      <h2>{character.name}</h2>
+    <main className="character-id container">
       <div className="imageCharacterId">
+        <h2>{character.name}</h2>
         <img src={image} alt="" />
       </div>
-      <p>{description}</p>
+      <p className="desc-charac">{description}</p>
     </main>
   );
 };

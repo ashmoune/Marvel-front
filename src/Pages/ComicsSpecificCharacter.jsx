@@ -14,12 +14,12 @@ const ComicsSpecificCharacter = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3000/comics/${characterId}`
+          `https://site--backend-marvel--rh6mx4gc4kyd.code.run/comics/${characterId}`
         );
         setComics(response.data.comics);
         setCharacterName(response.data.name);
         setImageCharacter(
-          `${response.data.thumbnail.path}/portrait_fantastic.${response.data.thumbnail.extension}`
+          `${response.data.thumbnail.path}/portrait_uncanny.${response.data.thumbnail.extension}`
         );
 
         setIsLoading(false);
@@ -33,27 +33,34 @@ const ComicsSpecificCharacter = () => {
   return isLoading ? (
     <p>Loading... please wait</p>
   ) : (
-    <main>
-      <Link to={`/character/${characterId}`} className="character-info">
-        {characterName}
-        {<img src={`${imageCharacter}`} alt="" />}
-      </Link>
-      <h2>Appearance in the following comics</h2>
-      {comics.map((comic) => {
-        const image = `${comic.thumbnail.path}/portrait_medium.${comic.thumbnail.extension}`;
+    <main className="container-specific-comic">
+      <section className="specific-charac">
+        <Link to={`/character/${characterId}`} className="character-info">
+          {characterName}
+          {<img src={`${imageCharacter}`} alt="" />}
+        </Link>
+      </section>
 
-        return (
-          <div key={comic._id}>
-            <Link to={`/comicId/${comic._id}`}>
-              <h3>{comic.title}</h3>
-              {/* <p>{comic.description}</p> */}
-              <p>
-                <img src={image} alt="" />
-              </p>
-            </Link>
-          </div>
-        );
-      })}
+      <h2>Appearance in the following comics : </h2>
+      <section className="comics-section">
+        {comics.map((comic) => {
+          const image = `${comic.thumbnail.path}/portrait_xlarge.${comic.thumbnail.extension}`;
+
+          return (
+            <div className="caroussel" key={comic._id}>
+              <div className="specific-comic">
+                <Link to={`/comicId/${comic._id}`}>
+                  <h3>{comic.title}</h3>
+                  <p>
+                    <img src={image} alt="" />
+                  </p>
+                  <p>{comic.description}</p>
+                </Link>
+              </div>
+            </div>
+          );
+        })}
+      </section>
     </main>
   );
 };

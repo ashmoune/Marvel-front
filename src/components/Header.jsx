@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
-import marvelLogo from "../assets/image/Marvel_Logo.svg";
+import marvelLogo from "../assets/image/marvelogo4.avif";
 
 const Header = () => {
   return (
     <>
-      <header>
+      <header className="header-container">
         <div className="logo">
           <Link to="/">
             <img src={marvelLogo} alt="" />
@@ -12,13 +12,17 @@ const Header = () => {
         </div>
         <div className="categories">
           <div>
-            <Link to="/comics">Comics</Link>
+            <Link to="/comics" className="link">
+              Comics
+            </Link>
           </div>
           <div>
-            <Link to="/">Characters</Link>
+            <Link to="/" className="link">
+              Characters
+            </Link>
           </div>
           <div>
-            <Link>Favoris</Link>
+            <Link className="link">Favoris</Link>
           </div>
         </div>
       </header>

@@ -11,6 +11,7 @@ import ComicsSpecificCharacter from "./Pages/ComicsSpecificCharacter";
 
 // import components
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
         <Header></Header>
         <Routes>
           <Route path="/" element={<Characters />}></Route>
-          <Route path="/comics" element={<Comics />}></Route>
+          <Route path="/comics/" element={<Comics />}></Route>
           <Route path="/comicId/:comicId" element={<ComicId />}></Route>
           <Route
             path="/character/:characterId"
@@ -30,6 +31,7 @@ function App() {
             element={<ComicsSpecificCharacter />}
           ></Route>
         </Routes>
+        <Footer></Footer>
       </Router>
     </>
   );

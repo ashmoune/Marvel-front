@@ -12,7 +12,7 @@ const ComicId = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3000/comic/${comicId}`
+          `https://site--backend-marvel--rh6mx4gc4kyd.code.run/comic/${comicId}`
         );
         setComic(response.data);
         console.log(response.data);
@@ -27,17 +27,17 @@ const ComicId = () => {
   const description = comic ? comic.description : "";
   const thumbnailPath = comic ? comic.thumbnail.path : "";
   const thumbnailExtension = comic ? comic.thumbnail.extension : "";
-  const image = `${thumbnailPath}/portrait_uncanny.${thumbnailExtension}`;
+  const image = `${thumbnailPath}/portrait_amazing.${thumbnailExtension}`;
 
   return isLoading ? (
     <p>Loading..please wait</p>
   ) : (
-    <main>
-      <h2>{comic.title}</h2>
+    <main className="comic-id container">
       <div className="imageComicId">
+        <h2>{comic.title}</h2>
         <img src={image} alt="" />
       </div>
-      <p>{description}</p>
+      <p className="desc-charac">{description}</p>
     </main>
   );
 };
