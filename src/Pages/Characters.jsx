@@ -46,9 +46,9 @@ const Characters = () => {
             placeholder="your superhero"
           />
         </div>
-        <p className="wolverine">
+        <span className="wolverine">
           <img src={wolvImage} alt="" />
-        </p>
+        </span>
       </section>
       <section className="charactersSection">
         {data.map((character) => {

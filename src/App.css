@@ -121,9 +121,9 @@ a:hover {
 }
 .hero-container-wolverine {
   /* border: pink solid 2px; */
-  max-height: 300px;
+  height: 250px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   /* overflow: hidden; */
 }
 .hero-container-avengers img {
@@ -137,6 +137,7 @@ a:hover {
   height: 100%;
 }
 .search-bar {
+  margin-top: 50px;
   width: 400px;
   height: 180px;
   border-radius: 5px;
@@ -146,7 +147,6 @@ a:hover {
 }
 .charactersSection,
 .comicsSection {
-  margin-top: 25px;
   padding: 5px 20px;
   /* border: green 1px solid; */
   gap: 30px;
