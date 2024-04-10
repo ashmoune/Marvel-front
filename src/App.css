@@ -67,10 +67,8 @@ button:focus-visible {
 }
 header {
   background-color: #e9481e;
-  /* color: #fff; */
-  /* padding: 20px; */
+
   justify-content: space-around;
-  /* justify-content: center; */
   align-items: end;
 }
 header .categories {
@@ -99,10 +97,10 @@ a:hover {
   /* padding: 5px; */
 }
 
-/*                                  */
-/*        MAIN SECTION             */
-/*                                */
-/*     comics & characters       */
+/*                                     */
+/*        MAIN SECTION                */
+/*                                   */
+/*     comics & characters          */
 .comicsSection {
   display: flex;
   flex-wrap: wrap;
