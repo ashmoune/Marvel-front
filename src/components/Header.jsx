@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import marvelLogo from "../assets/image/marvelogo4.avif";
+import "../assets/styles/Header.css";
 
 const Header = () => {
   return (

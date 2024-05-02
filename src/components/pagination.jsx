@@ -1,3 +1,4 @@
+import "../assets/styles/Pagination.css";
 import React from "react";
 
 const Pagination = ({ skip, setSkip, page, setPage, totalPages }) => {

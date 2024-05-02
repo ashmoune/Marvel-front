@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
+import "../assets/styles/ComicsScpecificCharacter.css";
 
 const ComicsSpecificCharacter = () => {
   const [comics, setComics] = useState([]);
@@ -41,7 +42,7 @@ const ComicsSpecificCharacter = () => {
         </Link>
       </section>
 
-      <h2>Appearance in the following comics : </h2>
+      <h2>Appearances in the following comics : </h2>
       <section className="comics-section">
         {comics.map((comic) => {
           const image = `${comic.thumbnail.path}/portrait_xlarge.${comic.thumbnail.extension}`;
