@@ -19,6 +19,7 @@ const Characters = () => {
           `https://site--backend-marvel--rh6mx4gc4kyd.code.run/characters?limit=100&skip=${skip}&name=${search}`
         );
         setData(response.data.results);
+        console.log(response.data.results);
         setTotalPages(Math.ceil(response.data.count / 100));
         setIsLoading(false);
       } catch (error) {
@@ -35,7 +36,7 @@ const Characters = () => {
       <section className="hero-container-wolverine">
         <div className="search-bar">
           <p>Looking for a specific character ?</p>
-          {/* Votre barre de recherche ici */}
+
           <input
             type="text"
             name="search"
@@ -51,24 +52,31 @@ const Characters = () => {
         </span>
       </section>
       <section className="charactersSection">
-        {data.map((character) => {
-          const image = `${character.thumbnail.path}/portrait_medium.${character.thumbnail.extension}`;
-          return (
-            <Link
-              key={character._id}
-              to={`/comicsSpecificCharacter/${character._id}`}
-              className="character-card"
-            >
-              <div>
-                <h2>{character.name}</h2>
-                {/* <p>{character.description}</p> */}
-                <p>
-                  <img src={image} alt="" />
-                </p>
-              </div>
-            </Link>
-          );
-        })}
+        {data
+          .filter(
+            (character) =>
+              character.thumbnail.path !==
+              "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available"
+          )
+
+          .map((character) => {
+            const image = `${character.thumbnail.path}/portrait_medium.${character.thumbnail.extension}`;
+            return (
+              <Link
+                key={character._id}
+                to={`/comicsSpecificCharacter/${character._id}`}
+                className="character-card"
+              >
+                <div>
+                  <h2>{character.name}</h2>
+                  {/* <p>{character.description}</p> */}
+                  <p>
+                    <img src={image} alt="" />
+                  </p>
+                </div>
+              </Link>
+            );
+          })}
       </section>
 
       <Pagination
