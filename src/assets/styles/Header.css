@@ -30,7 +30,7 @@ header .link {
 header .link:hover {
   background-color: #62a48d;
   color: #f9efb4;
-  padding: 5px 5px 0px 5px;
+  padding: 5px 5px 1px 5px;
 }
 
 a:hover {
