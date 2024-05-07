@@ -3,7 +3,7 @@
 ##Description
 Ce projet est un site web Marvel, où vous pouvez rechercher vos personnages et comics préférés. Il a été réalisé dans le cadre de ma formation au Réacteur. Ce projet a été developpé avec React pour le Front-End.
 
-![capture d'écran](./assets/image/Marvel.png)
+![capture d'écran](./src/assets/image/Marvel.png)
 
 Il est composé des pages suivantes:
 
