@@ -8,7 +8,6 @@ import Comics from "./Pages/Comics";
 import Characters from "./Pages/Characters";
 import CharacterId from "./Pages/CharacterId";
 import ComicsSpecificCharacter from "./Pages/ComicsSpecificCharacter";
-
 // import components
 import Header from "./components/Header";
 import Footer from "./components/Footer";
